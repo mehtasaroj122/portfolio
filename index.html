@@ -1,11 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saroj Mehta | IT Student Portfolio</title>
+    <meta
+      name="description"
+      content="Saroj Mehta is an IT student from Nepal building polished web experiences, practical software systems, and recruiter-friendly project work."
+    />
+    <meta
+      name="keywords"
+      content="Saroj Mehta, IT student, web developer, React portfolio, MERN learner, Nepal developer, Library Management System"
+    />
+    <meta name="author" content="Saroj Mehta" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Saroj Mehta | IT Student Portfolio" />
+    <meta
+      property="og:description"
+      content="A clean, modern portfolio showcasing Saroj Mehta's web development skills, featured projects, and full-stack learning journey."
+    />
+    <meta property="og:image" content="%BASE_URL%og-image.svg" />
+    <meta property="og:site_name" content="Saroj Mehta Portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Saroj Mehta | IT Student Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Modern portfolio for Saroj Mehta, an IT student building practical digital solutions with React, MERN concepts, and strong software fundamentals."
+    />
+    <meta name="twitter:image" content="%BASE_URL%og-image.svg" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      ;(() => {
+        const savedTheme = localStorage.getItem('portfolio-theme')
+        const prefersDark = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        ).matches
+        const isDark = savedTheme ? savedTheme === 'dark' : prefersDark
+        document.documentElement.classList.toggle('dark', isDark)
+      })()
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
