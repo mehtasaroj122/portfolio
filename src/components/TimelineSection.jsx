@@ -1,36 +1,59 @@
+import { motion } from 'framer-motion'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
 
 export function TimelineSection({ data }) {
   return (
-    <section className="relative py-20 sm:py-24" id="timeline">
+    <section className="relative py-20 sm:py-24" id="journey">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          description="The path so far combines education, self-learning, project execution, and the communication skills needed to present work professionally."
-          eyebrow="Timeline"
-          title="An ongoing journey from software fundamentals to practical full-stack execution"
+          description="The journey so far is about moving from solid fundamentals into product-minded execution, clearer communication, and stronger modern frontend craft."
+          eyebrow="Journey"
+          title="An evolving path from core software foundations to premium full-stack portfolio work"
         />
 
-        <div className="mt-12 rounded-[2rem] border border-slate-200/80 bg-white/80 p-6 shadow-[0_24px_90px_-44px_rgba(15,23,42,0.42)] backdrop-blur-sm sm:p-8 dark:border-white/10 dark:bg-white/5">
-          <div className="relative space-y-8 before:absolute before:left-[0.7rem] before:top-3 before:h-[calc(100%-1.5rem)] before:w-px before:bg-gradient-to-b before:from-brand-500 before:via-slate-200 before:to-transparent dark:before:via-white/10">
-            {data.timeline.map((item, index) => (
-              <Reveal className="relative pl-10" delay={index * 0.06} key={item.title}>
-                <span className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-brand-600 to-cyan-400 text-[11px] font-bold text-white shadow-md shadow-brand-500/20">
-                  {index + 1}
-                </span>
-                <div className="rounded-[1.5rem] border border-slate-200/80 bg-slate-50/90 p-5 dark:border-white/10 dark:bg-white/[0.06]">
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-700 dark:text-brand-200">
-                    {item.stage}
-                  </p>
-                  <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight text-ink-900 dark:text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                    {item.description}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+        <div className="mt-12 rounded-[2.4rem] border border-white/60 bg-white/76 p-6 shadow-[0_28px_110px_-46px_rgba(15,23,42,0.48)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/6 sm:p-8">
+          <div className="relative space-y-8 before:absolute before:left-[1rem] before:top-4 before:h-[calc(100%-2rem)] before:w-px before:bg-gradient-to-b before:from-cyan-400 before:via-brand-500 before:to-transparent md:before:left-1/2 md:before:-translate-x-1/2">
+            {data.timeline.map((item, index) => {
+              const isEven = index % 2 === 0
+
+              return (
+                <Reveal
+                  className={`relative md:grid md:grid-cols-2 ${isEven ? '' : ''}`}
+                  delay={index * 0.08}
+                  key={item.title}
+                  x={isEven ? -18 : 18}
+                >
+                  <div
+                    className={`pl-10 md:pl-0 ${isEven ? 'md:pr-10' : 'md:col-start-2 md:pl-10'}`}
+                  >
+                    <motion.article
+                      className="rounded-[1.8rem] border border-white/60 bg-white/76 p-5 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/5"
+                      whileHover={{ y: -4, scale: 1.01 }}
+                    >
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="rounded-full border border-cyan-300/50 bg-cyan-200/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-800 dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-100">
+                          {item.stage}
+                        </span>
+                        <span className="rounded-full border border-white/55 bg-white/72 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+                          {item.timeframe}
+                        </span>
+                      </div>
+                      <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
+                        {item.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                        {item.description}
+                      </p>
+                    </motion.article>
+                  </div>
+
+                  <span className="absolute left-0 top-8 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 to-brand-500 text-xs font-semibold text-white shadow-[0_16px_36px_-18px_rgba(70,91,255,0.85)] md:left-1/2 md:-translate-x-1/2">
+                    {index + 1}
+                  </span>
+                </Reveal>
+              )
+            })}
           </div>
         </div>
       </div>

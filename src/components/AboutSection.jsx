@@ -7,40 +7,57 @@ export function AboutSection({ data }) {
     <section className="relative py-20 sm:py-24" id="about">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          description="A portfolio should show more than tools. It should reveal how someone thinks, learns, and approaches real software problems."
-          eyebrow="About Me"
-          title="Building skills with purpose, not just collecting technologies"
+          description="The goal is simple: build software that feels sharp, trustworthy, and memorable while proving strong growth potential to recruiters and collaborators."
+          eyebrow="About"
+          title="A developer mindset shaped by polished UI, real workflows, and long-term full-stack ambition"
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <Reveal className="rounded-[2rem] border border-slate-200/80 bg-white/80 p-7 shadow-[0_20px_80px_-42px_rgba(15,23,42,0.45)] backdrop-blur-sm sm:p-8 dark:border-white/10 dark:bg-white/5">
-            <div className="space-y-6 text-base leading-8 text-slate-600 dark:text-slate-300">
-              {data.about.paragraphs.map((paragraph) => (
+        <div className="mt-12 grid gap-6 lg:grid-cols-[1.12fr_0.88fr]">
+          <Reveal className="rounded-[2.2rem] border border-white/60 bg-white/74 p-7 shadow-[0_26px_100px_-44px_rgba(15,23,42,0.55)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/6 sm:p-8">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="rounded-full border border-cyan-300/50 bg-cyan-200/45 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-800 dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-100">
+                Story
+              </span>
+              <span className="rounded-full border border-white/55 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.28em] text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+                Building beyond the student portfolio standard
+              </span>
+            </div>
+
+            <div className="mt-8 space-y-6 text-base leading-8 text-slate-600 dark:text-slate-300">
+              {data.about.story.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
 
-            <div className="mt-8 rounded-[1.5rem] border border-brand-200/80 bg-brand-50/90 p-5 dark:border-brand-400/20 dark:bg-brand-500/10">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-700 dark:text-brand-200">
-                Current Direction
-              </p>
-              <p className="mt-3 text-base leading-7 text-brand-900 dark:text-brand-100">
-                I am actively growing toward full-stack development with a strong interest in React, MERN workflows, cleaner code structure, and professional project delivery.
-              </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {data.about.signature.map((item) => (
+                <div
+                  className="rounded-[1.6rem] border border-white/55 bg-white/72 p-4 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/5"
+                  key={item.label}
+                >
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+                    {item.label}
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-200">
+                    {item.value}
+                  </p>
+                </div>
+              ))}
             </div>
           </Reveal>
 
           <div className="grid gap-5">
             {data.about.cards.map((card, index) => (
-              <Reveal className="h-full" delay={0.05 * index} key={card.title}>
+              <Reveal className="h-full" delay={index * 0.06} key={card.title} x={16}>
                 <motion.article
-                  className="h-full rounded-[1.75rem] border border-slate-200/80 bg-white/75 p-6 shadow-[0_20px_70px_-35px_rgba(15,23,42,0.35)] backdrop-blur-sm dark:border-white/10 dark:bg-white/5"
-                  whileHover={{ y: -6 }}
+                  className="relative h-full overflow-hidden rounded-[1.9rem] border border-white/60 bg-white/74 p-6 shadow-[0_22px_80px_-36px_rgba(15,23,42,0.45)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/6"
+                  whileHover={{ y: -6, scale: 1.01 }}
                 >
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-cyan-400 text-sm font-bold text-white shadow-md shadow-brand-500/20">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-400 via-brand-500 to-fuchsia-500" />
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-brand-500 text-sm font-semibold text-white shadow-[0_14px_40px_-18px_rgba(70,91,255,0.75)]">
                     0{index + 1}
                   </span>
-                  <h3 className="mt-5 font-display text-2xl font-semibold tracking-tight text-ink-900 dark:text-white">
+                  <h3 className="mt-5 font-display text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
                     {card.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">

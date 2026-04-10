@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Briefcase, Download, GitBranch, Mail } from 'lucide-react'
+import { Briefcase, Download, GitBranch, Mail, Send } from 'lucide-react'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
 
@@ -46,14 +46,17 @@ export function ContactSection({ data }) {
     <section className="relative py-20 sm:py-24" id="contact">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          description="The site is static-hosting friendly, so the form is designed to open your default email app while keeping the experience simple and professional."
+          description="The contact flow stays static-hosting friendly while still feeling polished. Submitting the form opens a prefilled email so the site remains easy to deploy anywhere."
           eyebrow="Contact"
-          title="Let’s connect for internships, collaboration, or project discussions"
+          title="Let’s connect for internships, collaborations, or premium product work"
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal className="rounded-[2rem] border border-slate-200/80 bg-white/80 p-7 shadow-[0_24px_90px_-44px_rgba(15,23,42,0.42)] backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
-            <p className="text-base leading-8 text-slate-600 dark:text-slate-300">
+        <div className="mt-12 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+          <Reveal className="rounded-[2.2rem] border border-white/60 bg-white/76 p-7 shadow-[0_28px_110px_-46px_rgba(15,23,42,0.5)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/6 sm:p-8">
+            <span className="inline-flex rounded-full border border-cyan-300/50 bg-cyan-200/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-800 dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-100">
+              Open for opportunities
+            </span>
+            <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300">
               {data.contactMessage}
             </p>
 
@@ -63,25 +66,27 @@ export function ContactSection({ data }) {
 
                 return (
                   <motion.a
-                    className="flex items-center justify-between gap-3 rounded-[1.5rem] border border-slate-200/80 bg-slate-50/90 px-5 py-4 text-sm font-medium text-slate-700 shadow-sm transition-colors duration-300 hover:border-brand-300 hover:text-brand-700 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-200 dark:hover:border-brand-400/40 dark:hover:text-brand-200"
+                    className="flex items-center justify-between gap-3 rounded-[1.6rem] border border-white/55 bg-white/74 px-5 py-4 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/5"
                     href={link.href}
                     key={link.label}
                     rel="noreferrer"
                     target={link.href.startsWith('http') ? '_blank' : undefined}
-                    whileHover={{ x: 4 }}
+                    whileHover={{ x: 5, scale: 1.01 }}
                   >
                     <span className="flex items-center gap-3">
-                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-cyan-400 text-white shadow-md shadow-brand-500/20">
+                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-brand-500 text-white shadow-[0_14px_36px_-18px_rgba(70,91,255,0.78)]">
                         <Icon size={18} />
                       </span>
                       <span>
-                        <span className="block font-semibold">{link.label}</span>
+                        <span className="block text-sm font-semibold text-slate-900 dark:text-white">
+                          {link.label}
+                        </span>
                         <span className="block text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                          Professional contact
+                          {link.value}
                         </span>
                       </span>
                     </span>
-                    <span className="text-xs font-semibold uppercase tracking-[0.22em]">
+                    <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 dark:text-slate-300">
                       Open
                     </span>
                   </motion.a>
@@ -89,25 +94,25 @@ export function ContactSection({ data }) {
               })}
             </div>
 
-            <div className="mt-8 rounded-[1.5rem] border border-brand-200/80 bg-brand-50/90 p-5 dark:border-brand-400/20 dark:bg-brand-500/10">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-700 dark:text-brand-200">
-                Quick Access
+            <div className="mt-8 rounded-[1.8rem] border border-white/55 bg-white/72 p-5 backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+              <p className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-500 dark:text-slate-400">
+                Quick access
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
                 <motion.a
-                  className="inline-flex items-center gap-2 rounded-2xl bg-ink-900 px-4 py-3 text-sm font-semibold text-white dark:bg-white dark:text-slate-950"
+                  className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white dark:bg-white dark:text-slate-950"
                   download
                   href={data.cvPath}
-                  whileHover={{ y: -2 }}
+                  whileHover={{ y: -3, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <Download size={16} />
                   Download CV
                 </motion.a>
                 <motion.a
-                  className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-100"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/55 bg-white/74 px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:text-white"
                   href={`mailto:${data.email}`}
-                  whileHover={{ y: -2 }}
+                  whileHover={{ y: -3, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <Mail size={16} />
@@ -117,15 +122,18 @@ export function ContactSection({ data }) {
             </div>
           </Reveal>
 
-          <Reveal className="rounded-[2rem] border border-slate-200/80 bg-white/80 p-7 shadow-[0_24px_90px_-44px_rgba(15,23,42,0.42)] backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
+          <Reveal className="rounded-[2.2rem] border border-white/60 bg-white/76 p-7 shadow-[0_28px_110px_-46px_rgba(15,23,42,0.5)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/6 sm:p-8">
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid gap-5 sm:grid-cols-2">
-                <label className="block">
+                <motion.label
+                  className="block rounded-[1.6rem] border border-white/55 bg-white/72 p-4 shadow-sm backdrop-blur-xl transition-colors duration-300 focus-within:border-cyan-300 dark:border-white/10 dark:bg-white/5"
+                  whileHover={{ y: -2 }}
+                >
                   <span className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">
                     Name
                   </span>
                   <input
-                    className="w-full rounded-2xl border border-slate-200/80 bg-slate-50/90 px-4 py-3 text-sm text-slate-700 outline-none transition-colors duration-300 placeholder:text-slate-400 focus:border-brand-400 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-100 dark:placeholder:text-slate-500"
+                    className="w-full bg-transparent text-sm text-slate-800 outline-none placeholder:text-slate-400 dark:text-slate-100 dark:placeholder:text-slate-500"
                     name="name"
                     onChange={handleChange}
                     placeholder="Your name"
@@ -133,13 +141,17 @@ export function ContactSection({ data }) {
                     type="text"
                     value={formData.name}
                   />
-                </label>
-                <label className="block">
+                </motion.label>
+
+                <motion.label
+                  className="block rounded-[1.6rem] border border-white/55 bg-white/72 p-4 shadow-sm backdrop-blur-xl transition-colors duration-300 focus-within:border-cyan-300 dark:border-white/10 dark:bg-white/5"
+                  whileHover={{ y: -2 }}
+                >
                   <span className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">
                     Email
                   </span>
                   <input
-                    className="w-full rounded-2xl border border-slate-200/80 bg-slate-50/90 px-4 py-3 text-sm text-slate-700 outline-none transition-colors duration-300 placeholder:text-slate-400 focus:border-brand-400 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-100 dark:placeholder:text-slate-500"
+                    className="w-full bg-transparent text-sm text-slate-800 outline-none placeholder:text-slate-400 dark:text-slate-100 dark:placeholder:text-slate-500"
                     name="email"
                     onChange={handleChange}
                     placeholder="you@example.com"
@@ -147,34 +159,37 @@ export function ContactSection({ data }) {
                     type="email"
                     value={formData.email}
                   />
-                </label>
+                </motion.label>
               </div>
 
-              <label className="block">
+              <motion.label
+                className="block rounded-[1.8rem] border border-white/55 bg-white/72 p-4 shadow-sm backdrop-blur-xl transition-colors duration-300 focus-within:border-cyan-300 dark:border-white/10 dark:bg-white/5"
+                whileHover={{ y: -2 }}
+              >
                 <span className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">
                   Message
                 </span>
                 <textarea
-                  className="min-h-[180px] w-full rounded-[1.5rem] border border-slate-200/80 bg-slate-50/90 px-4 py-3 text-sm text-slate-700 outline-none transition-colors duration-300 placeholder:text-slate-400 focus:border-brand-400 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-100 dark:placeholder:text-slate-500"
+                  className="min-h-[190px] w-full resize-none bg-transparent text-sm text-slate-800 outline-none placeholder:text-slate-400 dark:text-slate-100 dark:placeholder:text-slate-500"
                   name="message"
                   onChange={handleChange}
-                  placeholder="Tell me a little about your project, opportunity, or collaboration idea."
+                  placeholder="Tell me about the opportunity, project, or collaboration you have in mind."
                   required
                   value={formData.message}
                 />
-              </label>
+              </motion.label>
 
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <p className="max-w-md text-sm leading-7 text-slate-500 dark:text-slate-400">
-                  Submitting the form opens your email app, which keeps the site simple to deploy on GitHub Pages.
+                  This form opens your email app with a pre-filled message, which keeps the site simple to host on Vercel or GitHub Pages.
                 </p>
                 <motion.button
-                  className="inline-flex items-center gap-2 rounded-2xl bg-ink-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-950/15 dark:bg-white dark:text-slate-950"
+                  className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_18px_48px_-24px_rgba(8,15,31,0.85)] dark:bg-white dark:text-slate-950"
                   type="submit"
-                  whileHover={{ y: -2 }}
+                  whileHover={{ y: -3, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Mail size={16} />
+                  <Send size={16} />
                   Send Message
                 </motion.button>
               </div>

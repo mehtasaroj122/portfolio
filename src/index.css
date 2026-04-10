@@ -2,24 +2,38 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+  --font-display: "Sora", ui-sans-serif, sans-serif;
 
-  --color-brand-50: #eff6ff;
-  --color-brand-100: #dbeafe;
-  --color-brand-200: #bfdbfe;
-  --color-brand-300: #93c5fd;
-  --color-brand-400: #60a5fa;
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
-  --color-brand-700: #1d4ed8;
-  --color-brand-800: #1e40af;
-  --color-brand-900: #1e3a8a;
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #dbe8ff;
+  --color-brand-200: #bfd6ff;
+  --color-brand-300: #93bbff;
+  --color-brand-400: #5c93ff;
+  --color-brand-500: #465bff;
+  --color-brand-600: #3742e2;
+  --color-brand-700: #2d32b5;
+  --color-brand-800: #262a8d;
+  --color-brand-900: #1f226d;
 
-  --color-ink-950: #020617;
-  --color-ink-900: #0f172a;
-  --color-ink-800: #1e293b;
-  --color-surface-50: #f8fafc;
-  --color-surface-100: #f1f5f9;
-  --color-surface-200: #e2e8f0;
+  --color-ink-950: #050816;
+  --color-ink-900: #09101f;
+  --color-ink-800: #121a2d;
+  --color-surface-50: #f7f9ff;
+  --color-surface-100: #edf2ff;
+  --color-surface-200: #d9e4ff;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-[#f6f8ff] text-slate-950 antialiased transition-colors duration-500 dark:bg-[#050816] dark:text-slate-100;
+  }
+
+  ::selection {
+    @apply bg-cyan-300/40 text-slate-950 dark:bg-cyan-300/30 dark:text-white;
+  }
 }

@@ -4,23 +4,27 @@ import { SectionHeading } from './SectionHeading'
 
 export function HighlightsSection({ data }) {
   return (
-    <section className="relative py-20 sm:py-24" id="highlights">
+    <section className="relative py-20 sm:py-24" id="impact">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          description="This section is intentionally concise so it can double as a fast recruiter scan or a portfolio summary aligned with a CV."
-          eyebrow="CV Highlights"
-          title="Short, clear strengths that communicate value quickly"
+          align="center"
+          description="Recruiters often scan quickly. This section turns the strongest signals from the portfolio into short, high-value proof points."
+          eyebrow="Impact"
+          title="Fast signals that communicate value in seconds"
         />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {data.highlights.map((highlight, index) => (
             <Reveal className="h-full" delay={index * 0.05} key={highlight.title}>
               <motion.article
-                className="h-full rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-6 shadow-[0_20px_70px_-35px_rgba(15,23,42,0.35)] backdrop-blur-sm dark:border-white/10 dark:bg-white/5"
-                whileHover={{ y: -6 }}
+                className="relative h-full overflow-hidden rounded-[1.95rem] border border-white/60 bg-white/76 p-6 shadow-[0_22px_80px_-36px_rgba(15,23,42,0.45)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/6"
+                whileHover={{ y: -7, scale: 1.015 }}
               >
-                <div className="h-1.5 w-16 rounded-full bg-gradient-to-r from-brand-600 to-cyan-400" />
-                <h3 className="mt-5 font-display text-2xl font-semibold tracking-tight text-ink-900 dark:text-white">
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-400 via-brand-500 to-fuchsia-500" />
+                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+                  {highlight.metric}
+                </p>
+                <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
                   {highlight.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
