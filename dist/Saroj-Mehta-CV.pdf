@@ -1,0 +1,165 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [3 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 2519 >>
+stream
+BT
+/F2 24 Tf
+1 0 0 1 72 770 Tm
+(Saroj Mehta) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 748 Tm
+(IT Student | Web Developer | Problem Solver) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 728 Tm
+(Nepal | mehtasaroj122@gmail.com | github.com/mehtasaroj122 | linkedin.com/in/saroj-mehta-75894634a/) Tj
+ET
+BT
+/F2 15 Tf
+1 0 0 1 72 686 Tm
+(Profile) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 668 Tm
+(IT student focused on practical web development, full-stack learning, and building clean, recruiter-friendly digital experiences.) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 652 Tm
+(Interested in React, MERN workflows, Git and GitHub, WSL productivity, and reliable software development basics.) Tj
+ET
+BT
+/F2 15 Tf
+1 0 0 1 72 616 Tm
+(Core Skills) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 598 Tm
+(- Frontend: HTML, Tailwind CSS, JavaScript, React) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 582 Tm
+(- Backend: PHP, Laravel fundamentals, Node.js basics, REST API concepts) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 566 Tm
+(- Database: MySQL, DBMS concepts, schema design) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 550 Tm
+(- Tools: Git, GitHub, WSL, VS Code, Linux basics) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 534 Tm
+(- Concepts: AJAX, OOP, DSA, RBAC, CSRF protection, responsive design) Tj
+ET
+BT
+/F2 15 Tf
+1 0 0 1 72 496 Tm
+(Featured Project) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 478 Tm
+(Library Management System) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 462 Tm
+(- AJAX-based interaction without page reloads for smoother user workflows) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 446 Tm
+(- Role-based access control for admin, staff, and student operations) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 430 Tm
+(- Circulation workflow, book request handling, issue/return, and fine management) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 414 Tm
+(- Secure request handling with CSRF protection and practical workflow logic) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 398 Tm
+(- Repository: github.com/mehtasaroj122/LMS) Tj
+ET
+BT
+/F2 15 Tf
+1 0 0 1 72 360 Tm
+(Strengths) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 342 Tm
+(- Builds project work that is presentation-ready for viva, CV, and internship applications) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 326 Tm
+(- Focuses on clean interface thinking, usability, and practical software structure) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 310 Tm
+(- Continues growing into full-stack React and MERN development) Tj
+ET
+BT
+/F2 15 Tf
+1 0 0 1 72 272 Tm
+(Portfolio) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 254 Tm
+(Portfolio repository: github.com/mehtasaroj122/portfolio) Tj
+ET
+BT
+/F1 11 Tf
+1 0 0 1 72 238 Tm
+(This CV PDF was generated alongside the portfolio website for direct download and attachment use.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000002821 00000 n 
+0000002891 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2966
+%%EOF
